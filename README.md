@@ -16,7 +16,7 @@ cd veluwe-infrastructure
 The metadata control files (MCFs) are hosted in a separate GitHub repository (see [veluwe-metadata][veluwe-metadata-repo]), which is a submodule of the current repository. Make sure to fetch the data:
 
 ```shell
-git submodule update --recursive --remote
+git submodule update --init --recursive --remote
 ```
 
 The MCF files have to be converted to XML (ISO19139 standard) in order to be ingested into the metadata catalogue. This can be done using the provided Python script ([`generate-xml-records.py`](./metadata/generate-xml-records.py), based on [`pygeometa`](https://geopython.github.io/pygeometa/)). Create an environment with the required dependencies and run the script at once using [`uv`](https://docs.astral.sh/uv/):
