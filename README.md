@@ -48,8 +48,8 @@ docker exec -it pycsw pycsw-admin.py load-records --config /etc/pycsw/pycsw.yaml
 
 To remove the running services and destroy the database docker volume:
 ```shell
-docker compose rm --stop
-docker volume prune --all
+docker compose rm --stop --force
+docker volume prune --all --force
 ```
 
 ## Resources
