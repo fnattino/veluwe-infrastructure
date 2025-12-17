@@ -12,9 +12,6 @@ server:
     #domaincounts: true
     #spatial_ranking: true
     #workers=2
-    templates:
-        path: /etc/pycsw/templates
-        static: /etc/pycsw/static
 
 
 logging:
