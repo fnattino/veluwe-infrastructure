@@ -13,7 +13,7 @@ cd veluwe-infrastructure
 
 ### Retrieve metadata records
 
-The metadata control files (MCFs) are hosted in [a GitHub repository][veluwe-metadata-repo], which is a submodule of the current repository. Make sure to fetch the data:
+The metadata control files (MCFs) are hosted in a separate GitHub repository (see [veluwe-metadata][veluwe-metadata-repo]), which is a submodule of the current repository. Make sure to fetch the data:
 
 ```shell
 git submodule update --recursive --remote
