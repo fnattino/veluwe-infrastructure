@@ -19,9 +19,9 @@ The metadata control files (MCFs) are hosted in a separate GitHub repository (se
 git submodule update --init --recursive --remote
 ```
 
-The MCF files have to be converted to XML (ISO19139 standard) in order to be ingested into the metadata catalogue. This can be done using the provided Python script ([`generate-xml-records.py`](./metadata/generate-xml-records.py), based on [`pygeometa`](https://geopython.github.io/pygeometa/)). Create an environment with the required dependencies and run the script at once using [`uv`](https://docs.astral.sh/uv/):
+The MCF files have to be converted to XML (ISO19139 standard) in order to be ingested into the metadata catalogue. This can be done using the provided Python script ([`generate-xml-records.py`](./metadata/scripts/generate-xml-records.py), based on [`pygeometa`](https://geopython.github.io/pygeometa/)). Create an environment with the required dependencies and run the script at once using [`uv`](https://docs.astral.sh/uv/):
 ```shell
-uv run ./metadata/generate-xml-records.py -i ./metadata/veluwe-metadata/datasets/ -o metadata/records
+uv run ./metadata/scripts/generate-xml-records.py -i ./metadata/veluwe-metadata/datasets/ -o metadata/records
 ```
 
 ### Start the metadata catalogue
