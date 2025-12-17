@@ -1,6 +1,9 @@
-# Veluwe Metadata Portal - Infrastructure
+# Veluwe Metadata Catalogue Service for the Web (CSW) - Infrastructure
 
-Test infrastructure repository for the Veluwe Metadata Portal. It contains materials to deploy a metadata catalogue using [pyscw](https://pycsw.org/) from [metadata control files (MCFs)](https://geopython.github.io/pygeometa/reference/mcf/) hosted in a [a GitHub repository][veluwe-metadata-repo].
+> [!NOTE]
+> At the current stage, the material in this repository is purely explorative.
+
+This is the infrastructure repository hosting material to deploy a metadata catalogue for the [Veluwe Metadata Portal](https://lter-life-experience.org/veluwesearch/) using [pyscw](https://pycsw.org/). The catalogue uses records stored as [metadata control files (MCFs)](https://geopython.github.io/pygeometa/reference/mcf/) in a separate [GitHub repository][veluwe-metadata-repo].
 
 In order to get started, clone and access this repository:
 
@@ -13,7 +16,7 @@ cd veluwe-infrastructure
 
 ### Retrieve metadata records
 
-The metadata control files (MCFs) are hosted in a separate GitHub repository (see [veluwe-metadata][veluwe-metadata-repo]), which is a submodule of the current repository. Make sure to fetch the data:
+The metadata control files (MCFs) are hosted in a separate GitHub repository (see [veluwe-metadata][veluwe-metadata-repo]), which is a submodule of the current repository. Make sure to fetch its data:
 
 ```shell
 git submodule update --init --recursive --remote
@@ -26,7 +29,7 @@ uv run ./metadata/scripts/generate-xml-records.py -i ./metadata/veluwe-metadata/
 
 ### Start the metadata catalogue
 
-The metadata catalogue is backed by a PostGIS database. The database credentials and a few other parameters should be defined in a `.env` file, which can be setup by copying and editing the provided template:
+The metadata catalogue is backed by a PostGIS database. The database credentials and a few other parameters should be defined in a `.env` file, which can be set up by copying and editing the provided template:
 ```shell
 cp .env.template .env
 # edit the .env file
