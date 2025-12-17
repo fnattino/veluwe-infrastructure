@@ -26,6 +26,12 @@ uv run ./metadata/generate-xml-records.py -i ./metadata/veluwe-metadata/datasets
 
 ### Start the metadata catalogue
 
+The metadata catalogue is backed by a PostGIS database. The database credentials and a few other parameters should be defined in a `.env` file, which can be setup by copying and editing the provided template:
+```shell
+cp .env.template .env
+# edit the .env file
+```
+
 Start the metadata catalogue using the provided [`docker-compose.yml`](./docker-compose.yml) file:
 ```shell
 docker compose up --detatch
