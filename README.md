@@ -34,7 +34,7 @@ cp .env.template .env
 
 Start the metadata catalogue using the provided [`docker-compose.yml`](./docker-compose.yml) file:
 ```shell
-docker compose up --detatch
+docker compose up --detach
 ```
 
 The metadata catalogue should be reachable at http://localhost:8000/ .
@@ -48,7 +48,7 @@ docker exec -it pycsw pycsw-admin.py load-records --config /etc/pycsw/pycsw.yaml
 
 To remove the running services and destroy the database docker volume:
 ```shell
-docker compose rm
+docker compose rm --stop
 docker volume prune --all
 ```
 
