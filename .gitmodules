@@ -1,3 +1,4 @@
 [submodule "metadata/veluwe-metadata"]
 	path = metadata/veluwe-metadata
 	url = git@github.com:fnattino/veluwe-metadata.git
+	branch = main
