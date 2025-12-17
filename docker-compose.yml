@@ -1,0 +1,45 @@
+services:
+  db:
+    container_name: db
+    image: postgis/postgis:12-3.5-alpine
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - db-data:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+    networks:
+      - pycsw-net
+    healthcheck:
+      test: pg_isready -U ${POSTGRES_USER}
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  pycsw:
+    depends_on:
+      db:
+        condition: service_healthy
+    container_name: pycsw
+    image: geopython/pycsw:3.0.0-beta1
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - PYCSW_SERVER_URL=${PYCSW_SERVER_URL}
+      - PYCSW_CONFIG=/etc/pycsw/pycsw.yaml
+    ports:
+      - 8000:8000
+    volumes:
+      - ../pycsw:/etc/pycsw
+      - ../metadata:/metadata:ro
+    networks:
+      - pycsw-net
+
+networks:
+  pycsw-net:
+
+volumes:
+  db-data:
