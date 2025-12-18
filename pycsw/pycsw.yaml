@@ -32,8 +32,8 @@ manager:
 
 metadata:
     identification:
-        title: Veluwe Metadata CSW
-        description: Catalogue Service for the Web (CSW) hosting metadata from the Veluwe Metadata Portal
+        title: Veluwe Metadata
+        description: Metadata from the Veluwe Metadata Portal
         keywords:
             - catalogue
             - veluwe
