@@ -1,6 +1,6 @@
 # Veluwe Metadata Catalogue Service for the Web (CSW) - Infrastructure
 
-> [!NOTE]
+> [!WARNING]
 > At the current stage, the material in this repository is purely explorative.
 
 This is the infrastructure repository hosting material to deploy a metadata catalogue for the [Veluwe Metadata Portal](https://lter-life-experience.org/veluwesearch/) using [pyscw](https://pycsw.org/). The catalogue uses records stored as [metadata control files (MCFs)](https://geopython.github.io/pygeometa/reference/mcf/) in a separate [GitHub repository][veluwe-metadata-repo].
@@ -42,7 +42,9 @@ docker compose up --detach
 
 The metadata catalogue should be reachable at http://localhost:8000/ .
 
-Import the XML records in the metadata catalog:
+### Ingest metadata records
+
+Import the XML records in the metadata catalogue:
 ```shell
 docker exec -it pycsw pycsw-admin.py load-records --config /etc/pycsw/pycsw.yaml --path /metadata --recursive --yes -v DEBUG
 ```
